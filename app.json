@@ -1,0 +1,29 @@
+{
+  "expo": {
+    "name": "revolv",
+    "description": "This project is really great.",
+    "slug": "revolv",
+    "privacy": "public",
+    "facebookAppId":"196148317918180",
+    "facebookDisplayName": "Revolv",
+    "sdkVersion": "29.0.0",
+    "platforms": ["ios", "android"],
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/tinder-icon.png",
+    "splash": {
+      "image": "./assets/tinder-splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    }
+  }
+}
