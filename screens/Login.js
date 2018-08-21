@@ -4,7 +4,8 @@ import RootNavigator from '../navigation/RootNavigator';
 import { connect } from 'react-redux';
 import { login } from '../redux/actions'
 import * as firebase from 'firebase';
-import firebaseConfig from '../config/firebase.js'
+import firebaseConfig from '../config/firebase.js';
+
 firebase.initializeApp(firebaseConfig);
 
 import { 
@@ -17,6 +18,7 @@ class Login extends React.Component {
   state = {}
 
   componentWillMount() {
+    console.log(777)
     firebase.auth().onAuthStateChanged((user) => {
       if (user != null) {
         this.props.dispatch(login(user))
@@ -25,7 +27,7 @@ class Login extends React.Component {
   }
 
   login = async () => {
-    const { type, token } = await Expo.Facebook.logInWithReadPermissionsAsync('1961483179181801', {
+    const { type, token } = await Expo.Facebook.logInWithReadPermissionsAsync('196148317918180', {
         permissions: ['public_profile'],
       });
     if (type === 'success') {
@@ -42,17 +44,19 @@ class Login extends React.Component {
 
   render() {
     if(this.props.loggedIn){
+      console.log(1111)
       return (
         <RootNavigator/>
       )
     } else {
+      console.log(22222)
       return (
-        <View style={styles.container}>
-          <TouchableOpacity onPress={this.login.bind(this)}>
-            <Text>{this.props.loggedIn}</Text>
+        <View style={styles.loginContainer}>
+          <TouchableOpacity onPress={() => this.login()}>
+            <Text>LOGIN IN</Text>
           </TouchableOpacity>
         </View>
-      )      
+      )
     }
   }
 }

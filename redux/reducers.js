@@ -17,8 +17,11 @@ export default reducers = (state = {
   }, action) => {
     switch (action.type) {
       case 'LOGIN': {
-        return { ...state, user: action.user, loggedIn: action.loggedIn }
+        return { ...state, user: { ...state.user, ...action.user }, loggedIn: action.loggedIn }
+      }
+      case 'LOGOUT': {
+        return { ...state, user: { ...state.user, ...action.user }, loggedIn: false }
       }
     }
     return state;
-} 
+}

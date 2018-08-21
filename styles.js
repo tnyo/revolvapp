@@ -14,7 +14,7 @@ var styles = StyleSheet.create({
   center: {
     alignItems: 'center',
     justifyContent: 'center',
-    textAlign: 'center'
+    // textAlign: 'center'
   },
   img: {
   	width: 90,
@@ -43,13 +43,22 @@ var styles = StyleSheet.create({
 	  borderRadius: 15,
 	  borderWidth: 1,
 	  borderColor: '#df4723',
-	  textAlign: 'center',
+	  // textAlign: 'center',
 	  color: '#df4723',
 	  padding: 15,
 	  margin: 15,
 	  fontSize: 18,
 	  fontWeight: 'bold',
   },
+  card: {
+    width: deviceWidth*.9,
+    height: deviceHeight*.7,
+  },
+    loginContainer: {
+      flex: 1,
+        justifyContent: 'space-around',
+        alignItems: 'center'
+    }
 })
 
 module.exports = styles
